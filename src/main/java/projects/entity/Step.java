@@ -1,5 +1,12 @@
+/**
+ * 
+ */
 package projects.entity;
 
+/**
+ * @author Promineo
+ *
+ */
 public class Step {
   private Integer stepId;
   private Integer projectId;

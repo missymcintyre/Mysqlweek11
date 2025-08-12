@@ -1,3 +1,6 @@
+/**
+ * 
+ */
 package projects.entity;
 
 import java.math.BigDecimal;
@@ -58,9 +61,4 @@ public class Material {
     return "ID=" + materialId + ", materialName=" + materialName + ", numRequired=" + numRequired
         + ", cost=" + cost;
   }
-
-public Object getUnit() {
-	// TODO Auto-generated method stub
-	return null;
-}
 }

@@ -1,11 +1,16 @@
+/**
+ * 
+ */
 package projects.entity;
 
 import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 
-import projects.exception.DbException;
-
+/**
+ * @author Promineo
+ *
+ */
 public class Project {
   private Integer projectId;
   private String projectName;
@@ -51,10 +56,6 @@ public class Project {
   }
 
   public Integer getDifficulty() {
-	  if (difficulty != null && (difficulty < 1 || difficulty > 5)) {
-		    throw new DbException("Difficulty must be between 1 and 5.");
-		}
-
     return difficulty;
   }
 
@@ -81,16 +82,11 @@ public class Project {
   public List<Category> getCategories() {
     return categories;
   }
-  
+
   @Override
   public String toString() {
-      return String.format("[%d] %s", projectId, projectName);
-  }
-
- /* @Override
-  public String toString() {
     String result = "";
-   */ 
+    
     result += "\n   ID=" + projectId;
     result += "\n   name=" + projectName;
     result += "\n   estimatedHours=" + estimatedHours;
