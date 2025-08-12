@@ -1,6 +1,7 @@
 package projects.service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import projects.dao.ProjectDao;
 import projects.entity.Project;
@@ -18,12 +19,9 @@ public class ProjectService {
     }
 
     public Project fetchProjectById(Integer projectId) {
-        Project project = projectDao.fetchProjectById(projectId);
-        if (project == null) {
-            throw new DbException("Project with ID=" + projectId + " does not exist.");
-        }
-        return project;
-    }
+		return projectDao.fetchProjectById(projectId)
+				.orElseThrow(() -> new NoSuchElementException("Project with ID=" + projectId + " does not exist."));
+	} // end fetchProjectByIdService
 
     public void modifyProjectDetails(Project project) {
         boolean updated = projectDao.modifyProjectDetails(project);
